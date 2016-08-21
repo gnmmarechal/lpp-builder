@@ -35,6 +35,9 @@ namespace Lua_Player_Plus_Builder
                 string titleid = textBox2.Text;
                 string vpkname = savefile.FileName;
 
+                //Checks for the existence of a vpkname file and removes it
+                if (File.Exists(vpkname))
+                    File.Delete(vpkname);
                 //Checks for the existence of required programs, if not, unpack them.
                 if (!File.Exists("vita-mksfoex.exe"))
                 {
